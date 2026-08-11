@@ -1,3 +1,4 @@
+.gitignore
 __pycache__/
 .claude
 _archive
@@ -5,6 +6,6 @@ logs/
 outputs/
 runs/
 _cache/
-data/representative_days.csv
-data/clustering_validation.csv
-data/representative_days.csv
+./data/representative_days.csv
+./data/clustering_validation.csv
+./data/representative_days.csv
