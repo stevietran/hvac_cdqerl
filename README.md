@@ -1,8 +1,8 @@
-# HVAC QD-ERL — Quality‑Diversity Evolutionary Reinforcement Learning for HVAC Control
+# HVAC CQD-ERL — Contextual Quality‑Diversity Evolutionary Reinforcement Learning for HVAC Control
 
 ## Description
 
-This project implements a Quality‑Diversity + Evolutionary Reinforcement Learning (QD‑ERL) approach for building HVAC control. It combines evolutionary search with reinforcement learning to discover a diverse set of robust control policies that balance energy consumption and occupant comfort. The codebase is implemented in Python and organizes experiments, learners, and dispatch routines for simulation-based evaluation.
+This project proposes a Contextual Quality-Diversity Evolutionary Reinforcement Learning (CQD-ERL) approach to building HVAC control. It combines evolutionary search with reinforcement learning to discover a diverse set of robust control policies that balance energy consumption against occupant comfort, while respecting equipment constraints and mold-risk and peak-temperature ceilings. The codebase is implemented in Python, with a physics-based building/plant simulation environment, learners for the CQD-ERL and SAC arms, an experiments layer for training orchestration and checkpointing, and a dispatch module that evaluates trained policies against G36 baseline control over simulated annual operation.
 
 ## Visuals
 
@@ -14,30 +14,26 @@ Figure: algorithm flowchart from the repository docs.
 
 ## Prerequisites
 
-- Python 3.8+ or 3.9+ (match `environment.yml`)
-- Conda (recommended) or a compatible Python environment
+- Python 3.14+ (match `environment.yml`)
+- Conda (recommended)
 - Git
-- Compiler toolchain for any native dependencies (Windows: Visual C++ Build Tools)
-- Enough CPU/RAM for simulations; GPU optional for neural network training
+- Enough CPU/RAM/GPU for simulations
 
 ## Installation
 
 Clone the repository and create the environment from `environment.yml`:
 
 ```bash
-git clone https://github.com/yourusername/hvac_cdqerl.git
+git clone https://github.com/stevietran/hvac_cdqerl.git
 cd hvac_cdqerl
-conda env create -f environment.yml -n hvac_qd_erl
-conda activate hvac_qd_erl
-# If you prefer pip-only:
-# python -m pip install -r requirements.txt
+conda env create -f environment.yml -n hvac_cqderl
+conda activate hvac_cqderl
 ```
 
-If your system doesn't use Conda, recreate the packages listed in `environment.yml` with `pip` as appropriate.
 
 ## Usage
 
-Quick examples to run experiments and dispatch scripts:
+Quick examples to run tranings and dispatch scripts:
 
 ### Prepare data — Weather -> annual cooling load
 
